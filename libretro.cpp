@@ -154,7 +154,7 @@ void retro_get_system_av_info(struct retro_system_av_info *info)
    info->geometry.base_height  = max_height;
    info->geometry.max_width    = VIDEO_WIDTH;
    log_cb(RETRO_LOG_DEBUG, "max_height in av_info %d\n", max_height);
-   info->geometry.max_height   = max_height;
+   info->geometry.max_height   = VIDEO_HEIGHT;
    info->geometry.aspect_ratio = aspect;
 
    last_aspect                 = aspect;
@@ -535,16 +535,12 @@ bool retro_load_game(const struct retro_game_info *info)
    screen_horizontal = dice.game_video_rotation == ROTATE_0 || dice.game_video_rotation == ROTATE_180;
    environ_cb(RETRO_ENVIRONMENT_SET_ROTATION, &dice.game_video_rotation);
 
-   // Set max screen size based on circuit description
+   // Set current screen size based on circuit description; the maximum stays at VIDEO_HEIGHT,
+   // which is what the video chip actually pushes every frame.
    max_height = dice.max_height;
    struct retro_system_av_info avinfo;
    retro_get_system_av_info(&avinfo);
-   log_cb(RETRO_LOG_DEBUG, "older max_height %d\n", avinfo.geometry.max_height);
-   if (avinfo.geometry.max_height != max_height) {
-      log_cb(RETRO_LOG_INFO, "Setting max_height %d\n", max_height);
-      avinfo.geometry.max_height = max_height;
-      environ_cb(RETRO_ENVIRONMENT_SET_SYSTEM_AV_INFO, &avinfo);
-   }
+   environ_cb(RETRO_ENVIRONMENT_SET_GEOMETRY, &avinfo);
    // Now that we've got a circuit up, configure input sensitivity.
    check_variables();
 
