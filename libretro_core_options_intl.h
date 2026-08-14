@@ -22761,13 +22761,13 @@ struct retro_core_options_v2 options_or = {
 /* RETRO_LANGUAGE_PL */
 
 #define CATEGORY_INPUT_LABEL_PL "Wejście"
-#define CATEGORY_INPUT_INFO_0_PL NULL
+#define CATEGORY_INPUT_INFO_0_PL "Skonfiguruj ustawienia wejściowe specyficzne dla rdzenia."
 #define CATEGORY_RETROMOUSE_LABEL_PL NULL
-#define CATEGORY_RETROMOUSE_INFO_0_PL NULL
+#define CATEGORY_RETROMOUSE_INFO_0_PL "Skonfiguruj ustawienia wielu myszy libretro."
 #define CATEGORY_MANYMOUSE_LABEL_PL NULL
-#define CATEGORY_MANYMOUSE_INFO_0_PL NULL
-#define CATEGORY_DIPSWITCH_LABEL_PL NULL
-#define CATEGORY_DIPSWITCH_INFO_0_PL NULL
+#define CATEGORY_MANYMOUSE_INFO_0_PL "Skonfiguruj ustawienia wielu myszy ManyMouse."
+#define CATEGORY_DIPSWITCH_LABEL_PL "Przełącznik DIP switch"
+#define CATEGORY_DIPSWITCH_INFO_0_PL "Skonfiguruj przełącznik DIP switch i ustawienia potencjometru."
 #define DICE_USE_MOUSE_POINTER_FOR_PADDLE_1_LABEL_PL NULL
 #define DICE_USE_MOUSE_POINTER_FOR_PADDLE_1_LABEL_CAT_PL NULL
 #define DICE_USE_MOUSE_POINTER_FOR_PADDLE_1_INFO_0_PL NULL
@@ -22862,7 +22862,7 @@ struct retro_core_options_v2 options_or = {
 #define DICE_DIPSWITCH_1_LABEL_PL NULL
 #define DICE_DIPSWITCH_1_LABEL_CAT_PL NULL
 #define DICE_DIPSWITCH_1_INFO_0_PL NULL
-#define OPTION_VAL_1_PL NULL
+#define OPTION_VAL_1_PL "domyślne"
 #define DICE_DIPSWITCH_2_LABEL_PL NULL
 #define DICE_DIPSWITCH_2_LABEL_CAT_PL NULL
 #define DICE_DIPSWITCH_2_INFO_0_PL NULL
@@ -31857,7 +31857,7 @@ struct retro_core_options_v2 options_val = {
 /* RETRO_LANGUAGE_VN */
 
 #define CATEGORY_INPUT_LABEL_VN "Đều khiển"
-#define CATEGORY_INPUT_INFO_0_VN "Cấu hình các thiết lập điều khiển riêng cho từng core."
+#define CATEGORY_INPUT_INFO_0_VN "Cấu hình các thiết lập điều khiển riêng cho từng Trình giả lập."
 #define CATEGORY_RETROMOUSE_LABEL_VN "Chuột Retro"
 #define CATEGORY_RETROMOUSE_INFO_0_VN "Cấu hình các thiết lập nhiều chuột cho libretro."
 #define CATEGORY_MANYMOUSE_LABEL_VN "Nhiều chuột"
