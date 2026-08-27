@@ -80,6 +80,9 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       NULL,
       "input",
       {
+         {"25", NULL},
+         {"50", NULL},
+         {"75", NULL},
          {"125", NULL},
          {"250", NULL},
          {"375", NULL},
@@ -96,6 +99,9 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       NULL,
       "input",
       {
+         {"25", NULL},
+         {"50", NULL},
+         {"75", NULL},
          {"125", NULL},
          {"250", NULL},
          {"375", NULL},
