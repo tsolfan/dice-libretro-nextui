@@ -312,6 +312,27 @@ static void update_input(void)
          */
    }
 
+   // Map Player 1's face buttons to Player 2's paddle controls for multiplayer support on single device
+   if (NUM_CONTROLLERS > 1 && dice.get_paddle_joystick_paddle_1_paddle_2_combo())
+   {
+      bool p2_up   = input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X);
+      bool p2_down = input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_B);
+      bool p2_left  = input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y);
+      bool p2_right = input_state_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A);
+
+      input_bitmask[1] &= ~(
+         (1 << RETRO_DEVICE_ID_JOYPAD_UP)    |
+         (1 << RETRO_DEVICE_ID_JOYPAD_DOWN)  |
+         (1 << RETRO_DEVICE_ID_JOYPAD_LEFT)  |
+         (1 << RETRO_DEVICE_ID_JOYPAD_RIGHT)
+      );
+
+      if (p2_up)    input_bitmask[1] |= (1 << RETRO_DEVICE_ID_JOYPAD_UP);
+      if (p2_down)  input_bitmask[1] |= (1 << RETRO_DEVICE_ID_JOYPAD_DOWN);
+      if (p2_left)  input_bitmask[1] |= (1 << RETRO_DEVICE_ID_JOYPAD_LEFT);
+      if (p2_right) input_bitmask[1] |= (1 << RETRO_DEVICE_ID_JOYPAD_RIGHT);
+   }
+
    unsigned pad = 0;
    bool pointer_pressed = input_state_cb(pad, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_PRESSED);
    int16_t pointer_x = input_state_cb(pad, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_X);
@@ -413,6 +434,16 @@ static void check_variables(void)
          dice.set_paddle_joystick_absolute(false);
       else
          dice.set_paddle_joystick_absolute(true);
+   }
+
+   var.key = "dice_paddle_joystick_paddle_1_paddle_2_combo";
+   var.value = NULL;
+   if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+   {
+      if (!strcmp(var.value, "disabled"))
+         dice.set_paddle_joystick_paddle_1_paddle_2_combo(false);
+      else
+         dice.set_paddle_joystick_paddle_1_paddle_2_combo(true);
    }
 
    var.key = "dice_paddle_keyboard_sensitivity";
