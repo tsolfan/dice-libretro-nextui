@@ -281,6 +281,9 @@ void retro_reset(void)
 
 static void update_input(void)
 {
+   // Input callback for NextUI custom firmware, and possibly others, to expose menu controls
+   input_poll_cb();
+   
    int32_t input_bitmask[NUM_CONTROLLERS];
    int32_t input_analog_left_x[NUM_CONTROLLERS];
    int32_t input_analog_left_y[NUM_CONTROLLERS];
