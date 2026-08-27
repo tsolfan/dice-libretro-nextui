@@ -146,9 +146,10 @@ void retro_get_system_av_info(struct retro_system_av_info *info)
    float aspect = 4.0f / 3.0f;
    float sampling_rate         = 30000.0f;
 
+   //Changed .sample_rate from 0.0 to 44100.0 to resolve a minarch "Error setting resampling ratio"
    info->timing = (struct retro_system_timing) {
       .fps = 60.0,
-         .sample_rate = 0.0,
+         .sample_rate = 44100.0,
    };
    info->geometry.base_width   = VIDEO_WIDTH;
    info->geometry.base_height  = max_height;
