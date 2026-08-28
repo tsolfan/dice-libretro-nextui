@@ -164,6 +164,7 @@ class Input
       int32_t input_mouse_x[NUM_CONTROLLERS];
       int32_t input_mouse_y[NUM_CONTROLLERS];
       bool paddle_joystick_absolute;
+      bool paddle_joystick_paddle_1_paddle_2_combo;
       int paddle_keyboard_sensitivity;
       int paddle_joystick_sensitivity;
       int paddle_retromouse_sensitivity;
