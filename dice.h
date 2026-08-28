@@ -66,6 +66,8 @@ namespace dice_libretro {
 #endif
 
          void set_paddle_joystick_absolute(bool paddle_joystick_absolute);
+         void set_paddle_joystick_paddle_1_paddle_2_combo(bool paddle_joystick_paddle_1_paddle_2_combo);
+         bool get_paddle_joystick_paddle_1_paddle_2_combo() const;
          void set_paddle_keyboard_sensitivity(int val);
          void set_paddle_joystick_sensitivity(int val);
          void set_paddle_retromouse_sensitivity(int val);

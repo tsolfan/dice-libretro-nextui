@@ -211,6 +211,16 @@ namespace dice_libretro {
       if (circuit) circuit->input.paddle_joystick_absolute = paddle_joystick_absolute;
    }
 
+   void DICE::set_paddle_joystick_paddle_1_paddle_2_combo(bool paddle_joystick_paddle_1_paddle_2_combo)
+   {
+      if (circuit) circuit->input.paddle_joystick_paddle_1_paddle_2_combo = paddle_joystick_paddle_1_paddle_2_combo;
+   }
+
+   bool DICE::get_paddle_joystick_paddle_1_paddle_2_combo() const
+   {
+      return circuit && circuit->input.paddle_joystick_paddle_1_paddle_2_combo;
+   }
+
    void DICE::set_paddle_keyboard_sensitivity(int val)
    {
       if (circuit) circuit->input.paddle_keyboard_sensitivity = val;

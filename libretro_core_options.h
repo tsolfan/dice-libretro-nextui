@@ -71,6 +71,20 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "disabled"
    },
    {
+      "dice_paddle_joystick_paddle_1_paddle_2_combo",
+      "Input > Use Face Buttons for Paddle 2 Controls",
+      "Use Face Buttons for Paddle 2 Controls",
+      "Allows for multiplayer on a single device.",
+      NULL,
+      "input",
+      {
+         {"disabled", NULL},
+         {"enabled", NULL},
+         {NULL, NULL},
+      },
+      "disabled"
+   },
+   {
       // D-pad but not necessarily keyboard under libretro,
       // that name comes from the upstream code.
       "dice_paddle_keyboard_sensitivity",
@@ -80,6 +94,9 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       NULL,
       "input",
       {
+         {"25", NULL},
+         {"50", NULL},
+         {"75", NULL},
          {"125", NULL},
          {"250", NULL},
          {"375", NULL},
@@ -96,6 +113,9 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       NULL,
       "input",
       {
+         {"25", NULL},
+         {"50", NULL},
+         {"75", NULL},
          {"125", NULL},
          {"250", NULL},
          {"375", NULL},
