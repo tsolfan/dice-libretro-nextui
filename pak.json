@@ -5,7 +5,7 @@
   "description": "A Discrete Integrated Circult Emulator for minarch using the DICE Libretro core.",
   "author": "TSOLfan",
   "repo_url": "https://github.com/tsolfan/dice-libretro-nextui/tree/minarch",
-  "release_filename": "DICE.pak.zip",
+  "release_filename": "DICE.pakz",
   "changelog": {
     "v1.0.0": "Initial Release."
   },
